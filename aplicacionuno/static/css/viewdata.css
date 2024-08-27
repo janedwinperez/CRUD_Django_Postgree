@@ -1,0 +1,8 @@
+table, th, td {
+    border: 1px solid black;    /* Lineas de separación */    
+    border-collapse: collapse;  /* Para que la lineas no se vean dobles */
+}
+
+table {
+    width: 80%;
+}

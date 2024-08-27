@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"  href="{% static 'css/viewdata.css' %}">
+</head>
+<body>
+    {% include 'menu.html' %}
+    <h2>Ver Datos</h2>
+
+    <table>
+        <tr>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Casa</th>
+            <th>Celular</th>
+        </tr>
+        {% for p in propietarios %}
+        <tr>
+            <td>{{ p.id }}</td>
+            <td>{{ p.nombres }}</td>
+            <td>{{ p.apellidos }}</td>
+            <td>{{ p.casa }}</td>
+            <td>{{ p.celular }}</td>
+            <td><a href="{% url 'editpropietario' p.id %}">Edit</a></td>
+            <td><a href="{% url 'deletepropietario' p.id %}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

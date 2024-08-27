@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% include 'menu.html' %}
+    <h2>Editar Registro</h2>
+    <form method="post" action="/update/{{propietarios.id}}/">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td>Propietario ID</td>
+                <td><input type="text" name="id" value="{{propietarios.id}}" readonly></td>
+            </tr>
+            <tr>
+                <td>Propietario Nombres</td>
+                <td><input type="text" name="nombres" value="{{propietarios.nombres}}"></td>
+            </tr>
+            <tr>
+                <td>Propietario Apellidos</td>
+                <td><input type="text" name="apellidos" value="{{propietarios.apellidos}}"></td>
+            </tr>
+            <tr>
+                <td>Propietario Casa</td>
+                <td><input type="text" name="casa" value="{{propietarios.casa}}"></td>
+            </tr>
+            <tr>
+                <td>Propietario Celular</td>
+                <td><input type="text" name="celular" value="{{propietarios.celular}}"></td>
+            </tr>
+            <tr>
+                <input type="submit" value="Update Record">
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
