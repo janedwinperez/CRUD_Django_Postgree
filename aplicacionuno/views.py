@@ -64,3 +64,5 @@ def deletepropietario(request, id):
     delprop.delete()
     propietarios = Propietarios.objects.all()
     return render(request, 'viewdata.html', {'propietarios' : propietarios})
+
+    
